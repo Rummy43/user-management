@@ -38,7 +38,7 @@ jobs:
 
       - name: Tag and push image to GitHub Container Registry
         run: |
-          IMAGE_ID=ghcr.io/${{ github.repository }}
+          IMAGE_ID=ghcr.io/${{ github.actor }}/user-management
           IMAGE_ID=${IMAGE_ID,,} # lowercase
           docker tag my-user-app $IMAGE_ID:latest
           docker push $IMAGE_ID:latest
